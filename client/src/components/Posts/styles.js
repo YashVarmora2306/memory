@@ -6,10 +6,3 @@ export const StyledGrid = styled(Grid)(({ theme }) => ({
   alignItems: "center",
 }));
 
-export const StyledSmMargin = styled(Grid)(({ theme }) => ({
-  margin: theme.spacing(1),
-}));
-
-export const StyledActionDiv = styled(Grid)({
-  textAlign: "center",
-});

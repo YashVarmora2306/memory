@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Card, CardMedia, CardActions, Grid, Typography } from "@mui/material";
+import { Card, CardMedia,CardContent, CardActions, Typography, ButtonBase } from "@mui/material";
 
 export const StyledMedia = styled(CardMedia)({
   height: 0,
@@ -8,20 +8,12 @@ export const StyledMedia = styled(CardMedia)({
   backgroundBlendMode: "darken",
 });
 
-export const StyledBorder = styled("div")({
-  border: "solid",
-});
-
-export const StyledFullHeightCard = styled(Card)({
-  height: "100%",
-});
-
 export const StyledCard = styled(Card)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
   borderRadius: "15px",
-  height: "100%",
+  height: "450px",
   position: "relative",
 });
 
@@ -39,22 +31,57 @@ export const StyledOverlay2 = styled("div")({
   color: "white",
 });
 
-export const StyledGrid = styled(Grid)({
-  display: "flex",
-});
-
 export const StyledDetails = styled("div")({
   display: "flex",
+  flexDirection: "column",
   justifyContent: "space-between",
+  overflow: "hidden",
   margin: "20px",
+  height: "60px"
+});
+
+export const StyledTags = styled(Typography)({
+  display: "-webkit-box",
+  WebkitBoxOrient: "vertical",
+  WebkitLineClamp: 3,
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "normal",
 });
 
 export const StyledTitle = styled(Typography)({
   padding: "0 16px",
+  height: "50px",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap",
+});
+
+export const StyledCardContent = styled(CardContent)({
+  flexGrow: 3, 
+  overflow: "hidden",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+});
+
+export const StyledMessage = styled(Typography)({
+  display: "-webkit-box",
+  WebkitBoxOrient: "vertical",
+  WebkitLineClamp: 3,
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "normal",
+  height: "60px",
 });
 
 export const StyledCardActions = styled(CardActions)({
   padding: "0 16px 8px 16px",
   display: "flex",
   justifyContent: "space-between",
+});
+
+export const StyledButtonBase = styled(ButtonBase)({
+  display: "block",
+  textAlign: "initial",
 });

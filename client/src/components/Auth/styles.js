@@ -9,12 +9,6 @@ export const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
 }));
 
-export const StyledRoot = styled("div")(({ theme }) => ({
-  "& .MuiTextField-root": {
-    margin: theme.spacing(1),
-  },
-}));
-
 export const StyledAvatar = styled(Avatar)(({ theme }) => ({
   margin: theme.spacing(1),
   backgroundColor: theme.palette.secondary.main,

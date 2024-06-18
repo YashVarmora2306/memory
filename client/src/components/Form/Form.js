@@ -10,6 +10,7 @@ import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, TextField, Typography } from "@mui/material";
 import { createPost, updatePost } from "../../actions/posts";
+import { useNavigate } from "react-router-dom";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
@@ -17,12 +18,14 @@ const Form = ({ currentId, setCurrentId }) => {
     title: "",
     message: "",
     tags: "",
-    selectFile: "",
+    selectedFile: "",
   });
 
-  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id == currentId) : null);
+  const post = useSelector((state) => currentId ? state.posts.posts.find((message) => message._id === currentId) : null);
 
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -37,7 +40,8 @@ const Form = ({ currentId, setCurrentId }) => {
       dispatch(updatePost(currentId, {...postData, name: user?.result?.name}));
     }
     else{
-      dispatch(createPost({...postData, name: user?.result?.name}));
+      dispatch(createPost({ ...postData, name: user?.result?.name }, navigate));
+      
     }
     clear()
   };
@@ -49,7 +53,7 @@ const Form = ({ currentId, setCurrentId }) => {
       title: "",
       message: "",
       tags: "",
-      selectFile: ""
+      selectedFile: "",
     });
   };
 
@@ -64,7 +68,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   return (
-    <StyledPaper>
+    <StyledPaper elevation={6}>
       <StyledRoot>
         <StyledForm autoComplete="off" noValidate onSubmit={handleSubmit}>
           <Typography variant="h6">Creating a Memory</Typography>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import memories from "../../images/memories.png";
+import memoriesLogo from "../../images/memories.png";
+import memoriesText from "../../images/memories-Text.png";
 import {
   StyledAppBar,
   StyledHeading,
@@ -44,11 +45,9 @@ const Navbar = () => {
 
   return (
     <StyledAppBar position="static" color="inherit">
-      <StyledBrandContainer>
-        <StyledHeading component={Link} to="/" variant="h2" align="center">
-          Memories
-        </StyledHeading>
-        <StyledImage src={memories} alt="memories" height={60} />
+      <StyledBrandContainer to="/">
+        <img src={memoriesText} alt="icon" height="40px" />
+        <StyledImage src={memoriesLogo} alt="memories" height={60} />
           </StyledBrandContainer>
           <StyledToolbar>
               {user ? (
