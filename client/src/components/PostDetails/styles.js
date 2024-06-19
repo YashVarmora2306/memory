@@ -48,3 +48,14 @@ export const StyledLoadingPaper = styled(Paper)(({ theme }) => ({
   borderRadius: "15px",
   height: "39vh",
 }));
+
+export const StyledCommentOuterContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+}));
+
+export const StyledCommentInnerContainer = styled("div")(({ theme }) => ({
+  height: "200px",
+  overflowY: "auto",
+  marginRight: "30px",
+}));
