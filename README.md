@@ -139,7 +139,7 @@ client/
 │   ├── components/
 │   │   ├── Auth/
 │   │   ├── Form/
-│   |   |-- Home/
+│   |   ├── Home/
 │   │   ├── Navbar/
 │   │   ├── PostDetails/
 │   │   ├── Posts/
